@@ -70,8 +70,15 @@ equalButton.addEventListener('click', getAnswer);
 function getAnswer() {
     let screenContent = screen.textContent;
     let result = evaluateInput(screenContent);
-    if (result == Infinity || result == -Infinity) {
-        alert("Error!");
+    
+    // wrong  operator sequence gives NaN as result
+    if (!result) {
+        alert('Error: Please check operator sequence')
+        return;
+    }
+    // divisions by 0 give Infinity
+    if (result === Infinity || result === -Infinity) {
+        alert("Error: Please check for divisions by zero");
         return;
     }
     screen.textContent = result;
