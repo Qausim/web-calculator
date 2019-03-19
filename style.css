@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#calculator {
+    width: 300px;
+    height: 500px;
+    margin: auto;
+    background-color: gray;
+    margin-top: 50px;
+    border-radius: 10px;
+    position: relative;
+}
+
+#calculator #screen-wrapper {
+    position: absolute;
+    width: 90%;
+    height: 15%;
+    background-color: #fff;
+    margin: 20px 0px 10px 0px;
+    left: 5%;
+    border-radius: 8px;
+    font-size: 38px;
+}
+
+#calculator #screen-wrapper #screen {
+    text-align: right;
+    width: 95%;
+    height: 100px;
+    margin: auto;
+    max-width: 13ch;
+}
+
+#calculator #buttonWrapper {
+    position: absolute;
+    top: 25%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+    width: 90%;
+    left: 5%;
+    height: 70%;
+}
+
+#calculator #buttonWrapper #buttonClear {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#calculator #buttonWrapper #buttonPlusOrMinus {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#calculator #buttonWrapper #buttonBack {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+#calculator #buttonWrapper #buttonDivide {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+#calculator #buttonWrapper #buttonSeven {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#calculator #buttonWrapper #buttonEight {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#calculator #buttonWrapper #buttonNine {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+#calculator #buttonWrapper #buttonMultiply {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+#calculator #buttonWrapper #buttonFour {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+#calculator #buttonWrapper #buttonFive {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+#calculator #buttonWrapper #buttonSix {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+#calculator #buttonWrapper #buttonMinus {
+    grid-column: 4;
+    grid-row: 3;
+}
+
+#calculator #buttonWrapper #buttonOne {
+    grid-column: 1;
+    grid-row: 4;
+}
+
+#calculator #buttonWrapper #buttonTwo {
+    grid-column: 2;
+    grid-row: 4;
+}
+
+#calculator #buttonWrapper #buttonThree {
+    grid-column: 3;
+    grid-row: 4;
+}
+
+#calculator #buttonWrapper #buttonPlus {
+    grid-column: 4;
+    grid-row: 4;
+}
+
+#calculator #buttonWrapper #buttonZero {
+    grid-column: 1;
+    grid-row: 5;
+}
+
+#calculator #buttonWrapper #buttonPoint {
+    grid-column: 2;
+    grid-row: 5;
+}
+
+#calculator #buttonWrapper #buttonEqual {
+    grid-column: 3/5;
+    grid-row: 5;
+}
+
+.buttons {
+    font-size: 24px;
+    box-shadow: 1px 1px 3px 1px silver;
+}
