@@ -87,7 +87,7 @@ function getAnswer() {
 
 /**
  * Handles clicks for button elements that print their contents to a screen
- * @param {string} el: the element clicked
+ * @param {Object} el: the element clicked
  */
 function enterNum(el) {
     // return if screen is full
