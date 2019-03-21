@@ -24,10 +24,8 @@ const clearBack = () => {
     }
 
     let screenContent = screen.textContent;
-    if (screenContent.length > 1)
-        screen.textContent = screen.textContent.slice(0,-1);
-    else
-        screen.textContent = '0';
+    screen.textContent = screenContent.length > 1 ? screen.textContent.slice(0,-1) :
+    screen.textContent = '0';
 }
 
 /**
@@ -72,7 +70,8 @@ function getAnswer() {
     let result = evaluateInput(screenContent);
     
     // wrong  operator sequence gives NaN as result
-    if (!result) {
+    if (!result && result != 0) {
+        console.log(result);
         alert('Error: Please check operator sequence')
         return;
     }
@@ -146,19 +145,14 @@ function enterNum(el) {
 function evaluateInput(s) {
     // get all the numbers in the statement: positive and negative, whole and decimal
     // let numList = s.match(/(?<=[-+/*]?)-?\d+(\.\d+)?/g);
-    let numList = [];
-    for (let match of ('+'+s).match(/([+-/*(])(([-]?\d+)(\.)?(\d+)*)/g)) {
-        numList.push(match.slice(1));
-    }
+    let numList = s.replace(/\b[-/+*]/g, ',').split(',');
 
     // Get all operators (operates two operands) and save in a list
     // two states are managed: if the first element is a negative number or otherwise
     let opsList;
-    if (s.match(/[*/+-]/g)) {
-        opsList = s[0] == '-' ?
-        s.slice(1).match(/(?<=\d)[*+-/]/g).join(',').replace(/\.,/g,"").split(',') :
-        s.match(/(?<=\d)[*+-/]/g).join(',').replace(/\.,/g,"").split(',');
-    } else
+    if (s.match(/\b[*/+-]/g))
+        opsList = s.match(/\b[-/+*]/g);
+    else
         return numList[0];
 
     // Perform multiplication operations
